@@ -11,3 +11,6 @@ Thumbs.db
 
 # Node_modules (for frontend)
 node_modules/
+# Environment files with secrets
+.env
+backend/.env

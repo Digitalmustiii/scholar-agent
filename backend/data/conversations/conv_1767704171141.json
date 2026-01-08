@@ -1,0 +1,15 @@
+{
+  "id": "conv_1767704171141",
+  "title": "hello bro",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello bro",
+      "timestamp": "2026-01-06T12:56:11.147597",
+      "sources": null,
+      "reasoning": null
+    }
+  ],
+  "created_at": "2026-01-06T12:56:11.148652",
+  "updated_at": "2026-01-06T12:56:11.148652"
+}

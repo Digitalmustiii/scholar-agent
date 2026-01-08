@@ -1,0 +1,78 @@
+{
+  "id": "conv_1767704479956",
+  "title": "hello chat",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello chat",
+      "timestamp": "2026-01-06T13:01:20.271507",
+      "sources": null,
+      "reasoning": null
+    },
+    {
+      "role": "user",
+      "content": "hey",
+      "timestamp": "2026-01-06T13:01:39.556797",
+      "sources": null,
+      "reasoning": null
+    },
+    {
+      "role": "assistant",
+      "content": "You've provided a context that seems to be related to natural language processing, specifically discussing various models and techniques such as RoBERTa and LoRA, along with their configurations and training parameters. However, your query \"hey\" doesn't specify a particular question or topic you'd like to discuss within this context. Could you please provide a more detailed or specific question so I can offer a more targeted and helpful response based on the information about RoBERTa, LoRA, and other related concepts?",
+      "timestamp": "2026-01-06T13:01:43.312119",
+      "sources": [
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "(2017)). The broad coverage makes GLUE benchmark a\nstandard metric to evaluate NLU models such as RoBERTa and DeBERTa. The individual datasets\nare released under different permissive licenses.\nWikiSQL is introduced in Zhong et al. (2017) and contains 56,355/8,421 training/validation ex-\namples. The ",
+          "score": 0.12520087030737806,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "GPT-3 (Brown et al., 2020) is the largest single Transformer\nlanguage model trained to-date with 175B parameters.\nPrompt Engineering and Fine-Tuning. While GPT-3 175B can adapt its behavior with just a\nfew additional training examples, the result depends heavily on the input prompt (Brown et al.,\n20",
+          "score": 0.11354039424554205,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "2 P ROBLEM STATEMENT\nWhile our proposal is agnostic to training objective, we focus on language modeling as our motivat-\ning use case. Below is a brief description of the language modeling problem and, in particular, the\nmaximization of conditional probabilities given a task-speciﬁc prompt.\nSuppose ",
+          "score": 0.10538573092532773,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "Importantly, we start with the pre-trained RoBERTa large\nmodel when adapting to MRPC, RTE, and STS-B, instead of a model already adapted to MNLI.\nThe runs with this restricted setup are marked with †. See the hyperparameters used in our runs\nin Table 9.\nD.2 D EBERTA\nWe again train using AdamW with a",
+          "score": 0.10245356137020263,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "While RoBERTa has been overtaken by much larger models on NLP leaderboards\nsuch as the GLUE benchmark (Wang et al., 2019) in recent years, it remains a competitive and\npopular pre-trained model for its size among practitioners. We take the pre-trained RoBERTa base\n(125M) and RoBERTa large (355M) fro",
+          "score": 0.09476709960224376,
+          "paper_id": "cb60b08bba4e"
+        }
+      ],
+      "reasoning": [
+        {
+          "step": "Query Analysis",
+          "description": "Analyzing: 'hey'"
+        },
+        {
+          "step": "Tool Selection",
+          "description": "Selected 'vector_search' based on query patterns"
+        },
+        {
+          "step": "Answer Synthesis",
+          "description": "Generated answer using 'vector_search' tool"
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-06T13:01:20.271507",
+  "updated_at": "2026-01-06T13:01:43.312119"
+}

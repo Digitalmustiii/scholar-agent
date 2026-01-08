@@ -1,0 +1,15 @@
+{
+  "id": "conv_1767707559281",
+  "title": "hello chat, how are you",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello chat, how are you",
+      "timestamp": "2026-01-06T13:52:39.593845",
+      "sources": null,
+      "reasoning": null
+    }
+  ],
+  "created_at": "2026-01-06T13:52:39.593845",
+  "updated_at": "2026-01-06T13:52:39.593845"
+}

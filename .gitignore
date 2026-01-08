@@ -1,0 +1,13 @@
+# Python venv
+backend/venv/
+backend/.venv/
+*.pyc
+__pycache__/
+
+# Temp files
+.DS_Store
+Thumbs.db
+~$*
+
+# Node_modules (for frontend)
+node_modules/

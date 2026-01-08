@@ -1,0 +1,64 @@
+{
+  "id": "conv_1767677140305",
+  "title": "I don't have a personal name, but I'm here to help...",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "I don't have a personal name, but I'm here to help answer your questions and provide information based on the context you've provided. How can I assist you today?",
+      "timestamp": "2026-01-06T05:25:40.319032",
+      "sources": [
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "(2017)). The broad coverage makes GLUE benchmark a\nstandard metric to evaluate NLU models such as RoBERTa and DeBERTa. The individual datasets\nare released under different permissive licenses.\nWikiSQL is introduced in Zhong et al. (2017) and contains 56,355/8,421 training/validation ex-\namples. The ",
+          "score": 0.13961848112912803,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "2 P ROBLEM STATEMENT\nWhile our proposal is agnostic to training objective, we focus on language modeling as our motivat-\ning use case. Below is a brief description of the language modeling problem and, in particular, the\nmaximization of conditional probabilities given a task-speciﬁc prompt.\nSuppose ",
+          "score": 0.09167344988569884,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "2358–2367. PMLR, 2016.\nYuanzhi Li, Tengyu Ma, and Hongyang Zhang. Algorithmic regularization in over-parameterized\nmatrix sensing and neural networks with quadratic activations. In Conference On Learning The-\nory, pp. 2–47. PMLR, 2018b.\nZhaojiang Lin, Andrea Madotto, and Pascale Fung. Exploring vers",
+          "score": 0.0893407517228273,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "Jihun Ham and Daniel D. Lee. Grassmann discriminant analysis: a unifying view on subspace-based\nlearning. In ICML, pp. 376–383, 2008. URL https://doi.org/10.1145/1390156.\n1390204.\nKaren Hambardzumyan, Hrant Khachatrian, and Jonathan May. W ARP: Word-level Adversarial\nReProgramming. arXiv:2101.00121 ",
+          "score": 0.08526235776796265,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "RoBbase (FT)* 125.0M 87.6 94.8 90.2 63.6 92.8 91.9 78.7 91.2 86.4\nRoBbase (BitFit)* 0.1M 84.7 93.7 92.7 62.0 91.8 84.0 81.5 90.8 85.2\nRoBbase (AdptD)* 0.3M 87.1±.0 94.2±.1 88.5±1.1 60.8±.4 93.1±.1 90.2±.0 71.5±2.7 89.7±.3 84.4\nRoBbase (AdptD)* 0.9M 87.3±.1 94.7±.3 88.4±.1 62.6±.9 93.0±.2 90.6±.0 75.",
+          "score": 0.08040907990588637,
+          "paper_id": "cb60b08bba4e"
+        }
+      ],
+      "reasoning": [
+        {
+          "step": "Query Analysis",
+          "description": "Analyzing: 'hello chat, what is your name'"
+        },
+        {
+          "step": "Tool Selection",
+          "description": "Selected 'vector_search' based on query patterns"
+        },
+        {
+          "step": "Answer Synthesis",
+          "description": "Generated answer using 'vector_search' tool"
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-06T05:25:40.321048",
+  "updated_at": "2026-01-06T05:25:40.321048"
+}

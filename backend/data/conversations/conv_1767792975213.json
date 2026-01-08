@@ -1,0 +1,64 @@
+{
+  "id": "conv_1767792975213",
+  "title": "Hello, how can I assist you today?",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Hello, how can I assist you today?",
+      "timestamp": "2026-01-07T13:36:15.223884",
+      "sources": [
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "2 P ROBLEM STATEMENT\nWhile our proposal is agnostic to training objective, we focus on language modeling as our motivat-\ning use case. Below is a brief description of the language modeling problem and, in particular, the\nmaximization of conditional probabilities given a task-speciﬁc prompt.\nSuppose ",
+          "score": 0.14212057296202324,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "GPT-3 (Brown et al., 2020) is the largest single Transformer\nlanguage model trained to-date with 175B parameters.\nPrompt Engineering and Fine-Tuning. While GPT-3 175B can adapt its behavior with just a\nfew additional training examples, the result depends heavily on the input prompt (Brown et al.,\n20",
+          "score": 0.13524275478450107,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "3743–3747, 2018.\nAlec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving Language Under-\nstanding by Generative Pre-Training. pp. 12, a.\nAlec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language\nModels are Unsupervised Multitask Learners. pp.",
+          "score": 0.12562963354176354,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "We report the overall (matched and mismatched) accuracy for MNLI, Matthew’s\ncorrelation for CoLA, Pearson correlation for STS-B, and accuracy for other tasks. Higher is better\nfor all metrics. * indicates numbers published in prior works. †indicates runs conﬁgured in a setup\nsimilar to Houlsby et al",
+          "score": 0.11827788377491431,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "(2017)). The broad coverage makes GLUE benchmark a\nstandard metric to evaluate NLU models such as RoBERTa and DeBERTa. The individual datasets\nare released under different permissive licenses.\nWikiSQL is introduced in Zhong et al. (2017) and contains 56,355/8,421 training/validation ex-\namples. The ",
+          "score": 0.11619005383568735,
+          "paper_id": "cb60b08bba4e"
+        }
+      ],
+      "reasoning": [
+        {
+          "step": "Query Analysis",
+          "description": "Analyzing: 'hello bro'"
+        },
+        {
+          "step": "Tool Selection",
+          "description": "Selected 'vector_search' based on query patterns"
+        },
+        {
+          "step": "Answer Synthesis",
+          "description": "Generated answer using 'vector_search' tool"
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-07T13:36:15.227914",
+  "updated_at": "2026-01-07T13:36:15.227914"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "conv_1767677528949",
+  "title": "Hello. Is there something I can help you with or w...",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Hello. Is there something I can help you with or would you like to chat?",
+      "timestamp": "2026-01-06T05:32:08.962301",
+      "sources": [
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "(2017)). The broad coverage makes GLUE benchmark a\nstandard metric to evaluate NLU models such as RoBERTa and DeBERTa. The individual datasets\nare released under different permissive licenses.\nWikiSQL is introduced in Zhong et al. (2017) and contains 56,355/8,421 training/validation ex-\namples. The ",
+          "score": 0.17190531783052973,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "GPT-3 (Brown et al., 2020) is the largest single Transformer\nlanguage model trained to-date with 175B parameters.\nPrompt Engineering and Fine-Tuning. While GPT-3 175B can adapt its behavior with just a\nfew additional training examples, the result depends heavily on the input prompt (Brown et al.,\n20",
+          "score": 0.13462613283478492,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "2 P ROBLEM STATEMENT\nWhile our proposal is agnostic to training objective, we focus on language modeling as our motivat-\ning use case. Below is a brief description of the language modeling problem and, in particular, the\nmaximization of conditional probabilities given a task-speciﬁc prompt.\nSuppose ",
+          "score": 0.12522693521538988,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "3743–3747, 2018.\nAlec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving Language Under-\nstanding by Generative Pre-Training. pp. 12, a.\nAlec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language\nModels are Unsupervised Multitask Learners. pp.",
+          "score": 0.11146850622993713,
+          "paper_id": "cb60b08bba4e"
+        },
+        {
+          "paper_name": "2106.09685v2.pdf",
+          "page": null,
+          "content": "Jihun Ham and Daniel D. Lee. Grassmann discriminant analysis: a unifying view on subspace-based\nlearning. In ICML, pp. 376–383, 2008. URL https://doi.org/10.1145/1390156.\n1390204.\nKaren Hambardzumyan, Hrant Khachatrian, and Jonathan May. W ARP: Word-level Adversarial\nReProgramming. arXiv:2101.00121 ",
+          "score": 0.11067279609255101,
+          "paper_id": "cb60b08bba4e"
+        }
+      ],
+      "reasoning": [
+        {
+          "step": "Query Analysis",
+          "description": "Analyzing: 'hey chat'"
+        },
+        {
+          "step": "Tool Selection",
+          "description": "Selected 'vector_search' based on query patterns"
+        },
+        {
+          "step": "Answer Synthesis",
+          "description": "Generated answer using 'vector_search' tool"
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-01-06T05:32:08.962301",
+  "updated_at": "2026-01-06T05:32:08.964316"
+}

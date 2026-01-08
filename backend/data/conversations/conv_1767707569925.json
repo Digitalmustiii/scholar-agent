@@ -1,0 +1,15 @@
+{
+  "id": "conv_1767707569925",
+  "title": "Hello. I'm doing well, thanks for asking. I'm a la...",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Hello. I'm doing well, thanks for asking. I'm a large language model, so I don't have feelings or emotions like humans do, but I'm functioning properly and ready to chat with you. How about you? How's your day going so far?",
+      "timestamp": "2026-01-06T13:52:49.938254",
+      "sources": [],
+      "reasoning": []
+    }
+  ],
+  "created_at": "2026-01-06T13:52:49.938254",
+  "updated_at": "2026-01-06T13:52:49.938254"
+}

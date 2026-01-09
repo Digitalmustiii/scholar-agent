@@ -9,15 +9,24 @@ from services.llm_service import llm_service
 from services.chat_history import chat_history_service, Message, Conversation
 from services.export_service import export_service
 from agents.orchestrator import agent_orchestrator
+from config import settings
 from typing import List
 from datetime import datetime
 import uuid
+import os
 
-app = FastAPI(title="ScholarAgent API", version="3.1.0")
+app = FastAPI(
+    title="ScholarAgent API", 
+    version="4.0.0",
+    description="Multi-Agent RAG System for Research Papers"
+)
+
+# PRODUCTION-READY CORS - Parse from environment variable
+allowed_origins = settings.cors_origins.split(",") if settings.cors_origins != "*" else ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,10 +34,15 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "ScholarAgent API v3.1 - Phase 3: Chat History + Export"}
+    return {
+        "message": "ScholarAgent API v4.0 - Production Ready",
+        "environment": "production" if os.getenv("RAILWAY_ENVIRONMENT") else "development",
+        "docs": "/docs"
+    }
 
 @app.get("/health", response_model=HealthResponse)
 async def health():
+    """Health check endpoint for monitoring"""
     return HealthResponse(
         status="healthy",
         vector_db=vector_store_service.test_connection(),
@@ -231,7 +245,7 @@ async def export_bibtex(conversation_id: str):
     except Exception as e:
         raise HTTPException(500, f"Export error: {str(e)}")
 
-@app.get("/conversations/{conversation_id}/export/pdf")  # NEW: PDF export endpoint
+@app.get("/conversations/{conversation_id}/export/pdf")
 async def export_pdf(conversation_id: str):
     """Export conversation as PDF"""
     try:
@@ -248,3 +262,9 @@ async def export_pdf(conversation_id: str):
         raise HTTPException(404, str(e))
     except Exception as e:
         raise HTTPException(500, f"Export error: {str(e)}")
+
+# Railway health check
+@app.get("/healthz")
+async def healthz():
+    """Railway-specific health check"""
+    return {"status": "ok"}

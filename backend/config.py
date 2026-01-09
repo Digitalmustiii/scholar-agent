@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     llm_model: str = "llama-3.3-70b-versatile"
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     
+    # Qdrant Configuration
+    collection_name: str = "research_papers"
+    
     # Server Configuration
     port: int = int(os.getenv("PORT", 8000))
     host: str = "0.0.0.0"

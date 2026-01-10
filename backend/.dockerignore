@@ -1,0 +1,55 @@
+# Python-specific ignores
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+*.egg
+*.whl
+.pytest_cache/
+.eggs/
+
+# Virtual environments (exclude your local venv)
+venv/
+.venv/
+env/
+
+# Git and version control
+.git
+.gitignore
+
+# Environment/config files (secrets shouldn't be in image anyway)
+.env
+*.env
+
+# Data directories (these are runtime-created; don't include local data)
+data/
+data/papers/
+data/conversations/
+
+# Logs, temps, and caches
+*.log
+*.tmp
+*.cache
+tmp/
+cache/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Other large/unneeded files (add if you have these)
+node_modules/  # If any JS deps creep in
+dist/
+build/
+coverage/
+tests/
+docs/
+examples/
+# Any other heavy dirs/files specific to your project

@@ -1,11 +1,16 @@
+# backend/services/vector_store.py
+# Updated to use lazy-loaded embed_model from Settings, remove global Settings.embed_model
+
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue, MatchAny
-from llama_index.core import VectorStoreIndex, StorageContext, Settings
+from llama_index.core import VectorStoreIndex, StorageContext
 from llama_index.core.vector_stores import SimpleVectorStore
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from typing import List, Dict, Any, Optional
 from config import settings
 import uuid
+
+# NOTE: We assume Settings.embed_model is set lazily elsewhere if needed
+# Do not set it here to avoid loading at import
 
 class VectorStoreService:
     def __init__(self):
@@ -17,11 +22,6 @@ class VectorStoreService:
         self._ensure_collection()
         self.vector_store = SimpleVectorStore()
         self.index = None
-        
-        # Set embedding model globally
-        Settings.embed_model = HuggingFaceEmbedding(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
     
     def _ensure_collection(self):
         from qdrant_client.models import PayloadSchemaType
@@ -49,6 +49,11 @@ class VectorStoreService:
     def create_index(self, nodes, paper_id: Optional[str] = None):
         """Create index and store with paper_id for multi-paper support"""
         from llama_index.core import Settings
+        from services.llm_service import llm_service  # Import here to avoid circular
+        
+        # Ensure embed_model is set (lazy)
+        if Settings.embed_model is None:
+            Settings.embed_model = llm_service.embed_model
         
         print(f"[INDEX] Generating embeddings for {len(nodes)} nodes...")
         for node in nodes:
@@ -202,4 +207,4 @@ class VectorStoreService:
         except:
             return False
 
-vector_store_service = VectorStoreService()
+# Do NOT instantiate globally - handle in main.py

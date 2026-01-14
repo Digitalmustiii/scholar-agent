@@ -1,3 +1,6 @@
+# backend/services/llm_service.py
+# Updated with lazy loading for embed_model
+
 from groq import Groq
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.groq import Groq as GroqLLM
@@ -8,15 +11,22 @@ from typing import List
 class LLMService:
     def __init__(self):
         self.client = Groq(api_key=settings.groq_api_key)
-        self.embed_model = HuggingFaceEmbedding(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
+        self._embed_model = None  # Lazy load
         
         # Set global LLM to Groq (prevents OpenAI lookup)
         Settings.llm = GroqLLM(
             model=settings.llm_model,
             api_key=settings.groq_api_key
         )
+    
+    @property
+    def embed_model(self):
+        if self._embed_model is None:
+            print("[LLM] Lazy loading embedding model...")
+            self._embed_model = HuggingFaceEmbedding(
+                model_name="sentence-transformers/all-MiniLM-L6-v2"
+            )
+        return self._embed_model
     
     def generate_response(self, prompt: str) -> str:
         """Generate text response using Groq"""
@@ -55,4 +65,4 @@ class LLMService:
         except:
             return False
 
-llm_service = LLMService()
+# Do NOT instantiate globally - we'll handle in main.py

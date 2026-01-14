@@ -12,7 +12,5 @@ pypdf
 sentence-transformers
 pydantic
 pydantic-settings
-langchain
-langchain-groq
-langgraph
 rank-bm25
+fpdf2

@@ -1,11 +1,15 @@
+# backend/main.py
+# Updated to lazy instantiate services on startup, but only init heavy parts when used.
+# No major change needed here beyond removing global instances if they were there (they're in service files).
+
 from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from models.schemas import QueryRequest, QueryResponse, PaperUploadResponse, HealthResponse
 from models.chat_schemas import MessageCreate, ConversationList, ConversationDetail, ConversationSummary
 from services.document_processor import document_processor
-from services.vector_store import vector_store_service
-from services.llm_service import llm_service
+from services.vector_store import VectorStoreService  # Import class, not instance
+from services.llm_service import LLMService  # Import class, not instance
 from services.chat_history import chat_history_service, Message, Conversation
 from services.export_service import export_service
 from agents.orchestrator import agent_orchestrator
@@ -32,6 +36,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Lazy services - init on startup
+@app.on_event("startup")
+async def startup_event():
+    app.state.llm_service = LLMService()
+    app.state.vector_store_service = VectorStoreService()
+
 @app.get("/")
 async def root():
     return {
@@ -45,8 +55,8 @@ async def health():
     """Health check endpoint for monitoring"""
     return HealthResponse(
         status="healthy",
-        vector_db=vector_store_service.test_connection(),
-        llm=llm_service.test_connection()
+        vector_db=app.state.vector_store_service.test_connection(),
+        llm=app.state.llm_service.test_connection()
     )
 
 @app.post("/upload", response_model=PaperUploadResponse)
@@ -68,7 +78,7 @@ async def upload_paper(file: UploadFile):
         print(f"[UPLOAD] Paper processed. ID: {paper_id}, Nodes: {len(nodes)}")
         
         print(f"[UPLOAD] Creating index...")
-        vector_store_service.create_index(nodes, paper_id=paper_id)
+        app.state.vector_store_service.create_index(nodes, paper_id=paper_id)
         print(f"[UPLOAD] Index created successfully")
         
         agent_orchestrator.index = None
@@ -107,7 +117,7 @@ async def query_papers(request: QueryRequest):
 async def list_papers():
     try:
         papers = document_processor.get_all_papers()
-        indexed_ids = vector_store_service.get_papers_list()
+        indexed_ids = app.state.vector_store_service.get_papers_list()
         
         for paper in papers:
             paper["indexed"] = paper["paper_id"] in indexed_ids
@@ -125,7 +135,7 @@ async def delete_paper(filename: str):
         paper_id = document_processor.generate_paper_id(filename)
         
         try:
-            vector_store_service.delete_paper(paper_id)
+            app.state.vector_store_service.delete_paper(paper_id)
         except Exception as e:
             print(f"Warning: Could not delete from vector store: {e}")
         
